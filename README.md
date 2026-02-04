@@ -19,10 +19,20 @@ We organize the benchmark into 6 conceptual categories:
 
 ## Dataset Structure
 
-The validation dataset is located in `val/`:
-- `val.json`: Contains questions, options, and image names
-- `images/`: Directory containing all validation images
-- Images are named as `{index}.{extension}` (e.g., `0.jpg`, `1.webp`)
+For **Task II - Validation**, the released archive has the following structure:
+
+```text
+├── val/                      # Validation data
+│   ├── images/               # Validation images
+│   │   ├── 0.jpg
+│   │   ├── 1.webp
+│   │   └── ...
+│   └── val.json              # Validation questions and options (no ground-truth answers)
+```
+
+Images are named as `{index}.{extension}` (e.g., `0.jpg`, `1.webp`).
+
+**Note**: The `val/` dataset is provided for participants to validate their methods before the official competition. During the test phase (official competition), a separate **test** archive will be released for final evaluation.
 
 ### Data Format
 
