@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# Optional: 若仓库只放 val，可忽略 test（取消下面注释）
+# test/
