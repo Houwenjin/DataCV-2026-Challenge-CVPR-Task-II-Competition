@@ -5,12 +5,12 @@ This repository contains the evaluation framework and starter code for **Task II
 ## Overview
 
 Task II focuses on evaluating **vision-language models (VLMs)** under real-world visual illusions and perceptual anomalies, using **multiple-choice (A/B/C/D)** questions:
-- Input: an image + a prompt that includes a question and four options {A, B, C, D}
+- Input: an image + a prompt that includes a question and options {A, B, C, or D}
 - Goal: select the single correct option under diverse illusion/anomaly scenarios
-- Constraint: **inference-only** – no model training or fine-tuning is allowed; participants may only design prompts, in-context learning (ICL), routing, tool use, or agent-style pipelines
+- Constraint: **inference-only** – no model training or fine-tuning is allowed; participants may design any strategy
 
 We organize the benchmark into 6 conceptual categories:
-- **VA** (Visual Attention)
+- **VA** (Visual Amomaly)
 - **CI** (Color Illusion)
 - **MI** (Motion Illusion)
 - **GI** (Gestalt Illusion)
@@ -103,7 +103,7 @@ Format: `{image_index} {answer}` where:
 
 The evaluation computes 7 metrics:
 
-1. **VA_ACC**: Accuracy on Visual Attention subset
+1. **VA_ACC**: Accuracy on Visual Anomaly subset
 2. **CI_ACC**: Accuracy on Color Illusion subset
 3. **MI_ACC**: Accuracy on Motion Illusion subset
 4. **GI_ACC**: Accuracy on Gestalt Illusion subset
@@ -131,6 +131,7 @@ The organizing committee may request code and environment details for result ver
 
 ## Citation
 If you use this dataset, please cite:
+```bibtex
 @misc{hou2026seeingbelievingbenchmarkmultimodal,
       title={Seeing Is Believing? A Benchmark for Multimodal Large Language Models on Visual Illusions and Anomalies}, 
       author={Wenjin Hou and Wei Liu and Han Hu and Xiaoxiao Sun and Serena Yeung-Levy and Hehe Fan},
@@ -138,6 +139,6 @@ If you use this dataset, please cite:
       eprint={2602.01816},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2602.01816}, 
-}# DataCV-2026-Challenge-CVPR-Task-II-Competition
-DataCV 2026 Challenge @ CVPR – Task II: Real-World Visual Illusions and Anomalies
+      url={https://arxiv.org/abs/2602.01816}
+}
+```
