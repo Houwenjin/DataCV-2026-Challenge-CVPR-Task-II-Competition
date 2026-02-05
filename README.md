@@ -156,11 +156,22 @@ Please follow these steps to prepare your submission:
     ```
 
 - **Step 3: Zip the files into `result.zip`**
-  - Put `result.txt` and `model.json` in the **same directory**, then run:
-    ```bash
-    zip -r result.zip . -x "*DS_Store" -x "__MACOSX/*" -x ".*"
-    ```
-    This command creates a clean zip file and excludes macOS hidden files (e.g., `.DS_Store`, `__MACOSX`), which may otherwise break the grading script.
+  Place `result.txt` and `model.json` in the **same directory**, then follow the instructions for your operating system:
+
+  ####  For Windows Users
+  1. Select **both** `result.txt` and `model.json`.
+  2. Right-click and select **"Send to"** > **"Compressed (zipped) folder"** (or "Compress to ZIP file").
+  3. Rename the resulting file to `result.zip`.
+
+  #### For macOS Users
+  **Important Warning:** Do NOT use the default right-click "Compress" feature. It creates hidden files (e.g., `__MACOSX`, `.DS_Store`) that will cause the grading script to **fail**.
+  
+  Please use the terminal to create a clean zip file:
+  1. Open Terminal and navigate to the directory containing your files.
+  2. Run the following command:
+     ```bash
+     zip -r result.zip . -x "*.DS_Store" -x "__MACOSX/*" -x ".*"
+     ```
 
 - **Step 4: Submit `result.zip`** to the competition website.
 
