@@ -123,8 +123,29 @@ The evaluation computes 7 metrics:
 
 ## Submission
 
-Submit your `prediction.txt` file following the competition guidelines.
+### 1. Prepare Your Files
+You need to include **two files** in your submission:
+1.  **Prediction File**: A text file containing your results (e.g., `result.txt` or `prediction.txt`), following the format described in the **Output Format** section.
+2.  **Model Metadata**: A JSON file named **`model.json`** containing your model details.
 
+### 2. Create the Zip Archive
+Compress both files into a single zip archive (e.g., named **`result.zip`**). Please follow the instructions below to ensure a clean submission.
+
+####  For Windows Users
+1. Select **both** your prediction file and `model.json`.
+2. Right-click and select **"Send to"** > **"Compressed (zipped) folder"** (or "Compress to ZIP file").
+3. Rename the resulting file to `result.zip`.
+
+####  For macOS Users
+**Important Warning:** Do NOT use the default right-click "Compress" feature. It creates hidden files (e.g., `__MACOSX`, `.DS_Store`) that will cause the grading script to **fail**.
+
+Please use the terminal to create a clean zip file:
+1. Open Terminal and navigate to the folder containing your files.
+2. Run the following command (replace `result.txt` with your actual prediction filename):
+   ```bash
+   zip result.zip result.txt model.json -x "*.DS_Store" -x "__MACOSX/*" -x ".*"
+   
+### 3.Code Verification
 All winning teams are required to provide **complete, runnable code** for their solution after the competition ends, including:
 - Model definition and loading
 - Inference / decoding logic
