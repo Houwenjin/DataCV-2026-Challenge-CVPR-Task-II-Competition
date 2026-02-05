@@ -125,7 +125,7 @@ The evaluation computes 7 metrics:
 
 Please follow these steps to prepare your submission:
 
-- **Step 1: Generate `result.txt`**
+- **Step 1: Generate `result.txt` (Generate Predictions)** 
   - Write your predictions into a plain text file named `result.txt`, with **one `image_index` and one `answer` per line**.
   - Example:
     ```text
