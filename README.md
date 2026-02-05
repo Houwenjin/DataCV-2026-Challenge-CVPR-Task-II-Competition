@@ -163,7 +163,8 @@ Please follow these steps to prepare your submission:
     This command creates a clean zip file and excludes macOS hidden files (e.g., `.DS_Store`, `__MACOSX`), which may otherwise break the grading script.
 
 - **Step 4: Submit `result.zip`** to the competition website.
-  - We will provide an example `result.zip` in the repository for reference.
+
+**Note: we will provide an example `result.zip` in the repository for reference.**
 
 All winning teams are required to provide **complete, runnable code** for their solution after the competition ends, including:
 - Model definition and loading
