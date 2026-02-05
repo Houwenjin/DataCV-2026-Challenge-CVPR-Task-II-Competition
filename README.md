@@ -78,7 +78,7 @@ Run the evaluation script:
 python evaluate_simple.py \
   --mcq-data val/val.json \
   --image-dirs val/images \
-  --output prediction.txt
+  --output result.txt
 ```
 
 **Note**: You can also test with random predictions:
@@ -86,13 +86,13 @@ python evaluate_simple.py \
 python evaluate_simple.py \
   --mcq-data val/val.json \
   --image-dirs val/images \
-  --output prediction.txt \
+  --output result.txt \
   --random
 ```
 
 ### 4. Output Format
 
-The output file `prediction.txt` should contain one prediction per line:
+The output file `result.txt` should contain one prediction per line:
 ```
 0 1
 1 2
@@ -123,12 +123,64 @@ The evaluation computes 7 metrics:
 
 ## Submission
 
-Submit your `prediction.txt` file following the competition guidelines.
+Please follow these steps to prepare your submission:
+
+- **Step 1: Generate `result.txt` (Generate Predictions)** 
+  - Write your predictions into a plain text file named `result.txt`, with **one `image_index` and one `answer` per line**.
+  - Example:
+    ```text
+    0 1
+    1 2
+    ...
+    100 0
+    ```
+  - Each `answer` must be an integer in `{0, 1, 2, 3}`, converted from the choice letter:
+    - A → 0
+    - B → 1
+    - C → 2
+    - D → 3
+
+- **Step 2: Create `model.json`**
+  - Write your model name and main inference-time parameters into `model.json`.
+  - Example:
+    ```json
+    {
+      "model": "gpt-4o",
+      "parameters": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "max_tokens": 2048,
+        "frequency_penalty": 0.5
+      }
+    }
+    ```
+
+- **Step 3: Zip the files into `result.zip`**
+  Place `result.txt` and `model.json` in the **same directory**, then follow the instructions for your operating system:
+
+  ####  For Windows Users
+  1. Select **both** `result.txt` and `model.json`.
+  2. Right-click and select **"Send to"** > **"Compressed (zipped) folder"** (or "Compress to ZIP file").
+  3. Rename the resulting file to `result.zip`.
+
+  #### For macOS Users
+  **Important Warning:** Do NOT use the default right-click "Compress" feature. It creates hidden files (e.g., `__MACOSX`, `.DS_Store`) that will cause the grading script to **fail**.
+  
+  Please use the terminal to create a clean zip file:
+  1. Open Terminal and navigate to the directory containing your files.
+  2. Run the following command:
+     ```bash
+     zip -r result.zip . -x "*.DS_Store" -x "__MACOSX/*" -x ".*"
+     ```
+
+- **Step 4: Submit `result.zip`** to the competition website.
+
+**Note: we will provide an example `result.zip` in the repository for reference.**
 
 All winning teams are required to provide **complete, runnable code** for their solution after the competition ends, including:
 - Model definition and loading
 - Inference / decoding logic
-- Any preprocessing and postprocessing code
+- Any preprocessing and postprocessing code  
 The organizing committee may request code and environment details for result verification and reproducibility.
 
 ## Files
